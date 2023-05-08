@@ -3,7 +3,7 @@ use anchor_spl::associated_token::AssociatedToken;
 use anchor_spl::token::{self, FreezeAccount, Mint, MintTo, SetAuthority, Token, TokenAccount};
 const IDK_TAG: &[u8] = b"idk";
 
-declare_id!("JAut8U3VJ4rJJLyYzwMUCmbZQ8f2fEgc2SPo2rsj5dzt");
+declare_id!("5vzwztHZBMekRQDzy9K1PiQrWw3qYYvfwcgapnwcdJLC");
 
 #[program]
 pub mod stream {
