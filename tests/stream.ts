@@ -94,6 +94,21 @@ describe("stream", () => {
 
     await expect(program.provider.sendAndConfirm(tx, [wrongAuthority])).to.be.rejectedWith(Error);
   });
+
+  it("gives authority, reclaims authority, gives authority again", async () => {
+    const mint = await createMint();
+    streamAuthority = PublicKey.findProgramAddressSync(
+      [Buffer.from("idk"), mint.toBuffer()],
+      program.programId
+    )[0];
+
+    await program.methods.giveAuthority().accounts({ mint, streamAuthority }).rpc();
+    await program.methods.reclaimAuthority().accounts({ mint, streamAuthority }).rpc();
+    // Give it again
+    await program.methods.giveAuthority().accounts({ mint, streamAuthority }).rpc();
+
+    console.log("tx success");
+  });
 });
 
 export function associatedTokenAddress(mint: PublicKey, wallet: PublicKey): PublicKey {

@@ -141,7 +141,8 @@ pub struct ReclaimAuthority<'info> {
     #[account(
         mut,
         seeds = ["idk".as_bytes(), mint.key().as_ref()],
-        bump
+        close = user,
+        bump = stream_authority.bump
     )]
     pub stream_authority: Account<'info, StreamAuthority>,
     #[account(mut)]
@@ -164,6 +165,10 @@ pub struct MintToSelf<'info> {
     pub mint: Account<'info, Mint>,
     #[account(mut)]
     pub payer: Signer<'info>,
+    #[account(
+        seeds = ["idk".as_bytes(), mint.key().as_ref()],
+        bump = stream_authority.bump
+    )]
     pub stream_authority: Account<'info, StreamAuthority>,
 
     pub system_program: Program<'info, System>,

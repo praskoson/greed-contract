@@ -15,7 +15,7 @@ module.exports = async function (provider) {
   const program = workspace.Stream as Program<Stream>;
   console.log(program.programId.toBase58());
 
-  const mint = new PublicKey("C9WxJinr7c8312t9fkjHtBVS6gUhMKKYN7wt5o6mHFVA");
+  const mint = new PublicKey("EbXv52sFutWWFcRUfRxa5MHYKaBsmWxBmxKAw1ko4XEo");
   const streamAuthority = PublicKey.findProgramAddressSync(
     [Buffer.from("idk"), mint.toBuffer()],
     program.programId
