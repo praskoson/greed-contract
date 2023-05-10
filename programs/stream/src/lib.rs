@@ -19,7 +19,7 @@ pub mod stream {
         }
 
         //
-        // Mint the token. Expects 0 decimals.
+        // Mint the token. Expects 2 decimals.
         //
         token::mint_to(
             ctx.accounts.mint_to_ctx().with_signer(&[&[
@@ -27,7 +27,7 @@ pub mod stream {
                 ctx.accounts.mint.clone().key().as_ref(),
                 &[ctx.accounts.stream_authority.bump],
             ]]),
-            8007320330,
+            800732033000,
         )?;
 
         //
