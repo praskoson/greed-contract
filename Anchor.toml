@@ -7,6 +7,9 @@ stream = "5vzwztHZBMekRQDzy9K1PiQrWw3qYYvfwcgapnwcdJLC"
 [programs.devnet]
 stream = "5vzwztHZBMekRQDzy9K1PiQrWw3qYYvfwcgapnwcdJLC"
 
+[programs.mainnet]
+stream = "5vzwztHZBMekRQDzy9K1PiQrWw3qYYvfwcgapnwcdJLC"
+
 [registry]
 url = "https://api.apr.dev"
 
